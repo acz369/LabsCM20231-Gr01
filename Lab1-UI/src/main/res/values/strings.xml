@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Información Personal</string>
+    <string name="app_name">Agenda</string>
     <string name="person_name">Nombres</string>
     <string name="person_lastname">Apellidos</string>
     <string name="person_gender">Sexo:</string>
@@ -8,6 +8,13 @@
     <string name="person_birth_date">Fecha de Nacimiento:</string>
     <string name="change_button">Cambiar</string>
     <string name="next_button">Siguiente</string>
+    <string name="person_phone">Teléfono</string>
+    <string name="person_email">Correo</string>
+    <string name="person_country">país</string>
+    <string name="person_city">Ciudad</string>
+    <string name="person_address">Dirección</string>
+    <string name="activity_1_name">Información Personal</string>
+    <string name="activity_2_name">Información de Contacto</string>
     <array name="level_schooling">
         <item>Grado de escolaridad</item>
         <item>Primaria</item>
