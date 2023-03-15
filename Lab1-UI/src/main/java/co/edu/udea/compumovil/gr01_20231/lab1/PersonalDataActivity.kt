@@ -1,5 +1,6 @@
 package co.edu.udea.compumovil.gr01_20231.lab1
 
+import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import co.edu.udea.compumovil.gr01_20231.lab1.schemas.Personal
 import android.os.Bundle
@@ -10,6 +11,7 @@ import android.widget.RadioGroup
 import android.widget.RadioButton
 import android.widget.Spinner
 import android.widget.TextView
+import java.util.*
 
 class PersonalDataActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,5 +38,26 @@ class PersonalDataActivity : AppCompatActivity() {
             val intent = Intent(this, ContactDataActivity::class.java)
             startActivity(intent)
         }
+
+        val buttonChange = findViewById<TextView>(R.id.buttonChange)
+        buttonChange.setOnClickListener {
+            val calendar = Calendar.getInstance()
+            val year = calendar.get(Calendar.YEAR)
+            val month = calendar.get(Calendar.MONTH)
+            val day = calendar.get(Calendar.DAY_OF_MONTH)
+            val datePickerDialog = DatePickerDialog(
+                this,
+                { _, year, monthOfYear, dayOfMonth ->
+                    val data = (dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year)
+                    birthDate.text = data
+                },
+                year,
+                month,
+                day
+            )
+            println(datePickerDialog)
+            datePickerDialog.show()
+        }
     }
+
 }
