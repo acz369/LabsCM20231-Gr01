@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="person_name">Name</string>
+    <string name="person_lastname">Surname</string>
+    <string name="person_gender">Gender</string>
+    <string name="person_man">Men</string>
+    <string name="person_woman">Women</string>
+    <string name="person_birth_date">Date of Birth:</string>
+    <string name="change_button">Change</string>
+    <string name="next_button">Next</string>
+    <string name="person_phone">Phone</string>
+    <string name="person_email">Email</string>
+    <string name="person_country">Country</string>
+    <string name="person_city">City</string>
+    <string name="person_address">Address</string>
+    <string name="activity_1_name">Personal Information</string>
+    <string name="activity_2_name">Contact Information</string>
+    <string name="app_name">Agenda</string>
+</resources>
