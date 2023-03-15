@@ -25,14 +25,14 @@ class PersonalDataActivity : AppCompatActivity() {
         val schoolingSpinner = findViewById<Spinner>(R.id.pickerListSchooling)
 
         val next = findViewById<Button>(R.id.buttonNext)
-        next.setOnClickListener{
+        next.setOnClickListener {
             val gender = findViewById<RadioButton>(groupRadioButton.checkedRadioButtonId)
             val personal = Personal(
-                name=nameInput.text.toString(),
-                lastName=lastNameInput.text.toString(),
-                gender=gender.text.toString(),
-                birthDate=birthDate.text.toString(),
-                schooling=schoolingSpinner.selectedItem.toString()
+                name = nameInput.text.toString(),
+                lastName = lastNameInput.text.toString(),
+                gender = gender.text.toString(),
+                birthDate = birthDate.text.toString(),
+                schooling = schoolingSpinner.selectedItem.toString()
             )
             println(personal)
             val intent = Intent(this, ContactDataActivity::class.java)
@@ -59,5 +59,4 @@ class PersonalDataActivity : AppCompatActivity() {
             datePickerDialog.show()
         }
     }
-
 }
