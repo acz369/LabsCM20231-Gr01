@@ -47,15 +47,13 @@ class PersonalDataActivity : AppCompatActivity() {
             val day = calendar.get(Calendar.DAY_OF_MONTH)
             val datePickerDialog = DatePickerDialog(
                 this,
-                { _, year, monthOfYear, dayOfMonth ->
-                    val data = (dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year)
-                    birthDate.text = data
+                { _, year, month, day ->
+                    birthDate.text = String.format("%s/%02d/%02d", year, month, day)
                 },
                 year,
                 month,
                 day
             )
-            println(datePickerDialog)
             datePickerDialog.show()
         }
     }
