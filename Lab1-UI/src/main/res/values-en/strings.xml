@@ -2,7 +2,7 @@
 <resources>
     <string name="person_name">Name</string>
     <string name="person_lastname">Surname</string>
-    <string name="person_gender">Gender</string>
+    <string name="person_gender">Gender:</string>
     <string name="person_man">Men</string>
     <string name="person_woman">Women</string>
     <string name="person_birth_date">Date of Birth:</string>
