@@ -26,17 +26,43 @@ class PersonalDataActivity : AppCompatActivity() {
 
         val next = findViewById<Button>(R.id.buttonNext)
         next.setOnClickListener {
-            val gender = findViewById<RadioButton>(groupRadioButton.checkedRadioButtonId)
-            val personal = Personal(
-                name = nameInput.text.toString(),
-                lastName = lastNameInput.text.toString(),
-                gender = gender.text.toString(),
-                birthDate = birthDate.text.toString(),
-                schooling = schoolingSpinner.selectedItem.toString()
-            )
-            println(personal)
-            val intent = Intent(this, ContactDataActivity::class.java)
-            startActivity(intent)
+            var error = false
+
+            val name = nameInput.text.toString()
+            if (name.isEmpty()) {
+                nameInput.error = getString(R.string.required)
+                error = true
+            }
+
+            val lastName = lastNameInput.text.toString()
+            if (lastName.isEmpty()) {
+                lastNameInput.error = getString(R.string.required)
+                error = true
+            }
+
+            if (!error) {
+                val gender = findViewById<RadioButton>(groupRadioButton.checkedRadioButtonId)
+                var personalGender = ""
+                gender?.let {
+                    personalGender = gender.text.toString()
+                }
+
+                var schooling = schoolingSpinner.selectedItem.toString()
+                if (schooling == resources.getStringArray(R.array.level_schooling)[0]) {
+                    schooling = ""
+                }
+
+                val personal = Personal(
+                    name = name,
+                    lastName = lastName,
+                    gender = personalGender,
+                    birthDate = birthDate.text.toString(),
+                    schooling = schooling,
+                )
+                println(personal)
+                val intent = Intent(this, ContactDataActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         val buttonChange = findViewById<TextView>(R.id.buttonChange)

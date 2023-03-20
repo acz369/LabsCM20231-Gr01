@@ -15,5 +15,13 @@
     <string name="person_address">Address</string>
     <string name="activity_1_name">Personal Information</string>
     <string name="activity_2_name">Contact Information</string>
+    <string name="required">Required</string>
+    <array name="level_schooling">
+        <item>Grade of schooling</item>
+        <item>Elementary school</item>
+        <item>High School</item>
+        <item>University</item>
+        <item>Other</item>
+    </array>
     <string name="app_name">Agenda</string>
 </resources>
