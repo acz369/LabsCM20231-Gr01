@@ -9,14 +9,14 @@ data class Personal(
 )
 
 data class Contact (
-    val name: String,
-    val lastName: String,
-    val gender: String,
-    val birthDate: String,
-    val schooling: String,
-    val phone: Int,
-    val address: String,
-    val email: String,
-    val country: String,
-    val city: String,
+    val name: String = "",
+    val lastName: String = "",
+    val gender: String = "",
+    val birthDate: String = "",
+    val schooling: String = "",
+    val phone: Int = 0,
+    val address: String = "",
+    val email: String = "",
+    val country: String = "",
+    val city: String = "",
 )

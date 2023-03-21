@@ -5,15 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import co.edu.udea.compumovil.gr01_20231.lab1.schemas.Personal
 import android.os.Bundle
 import android.content.Intent
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.RadioButton
 import android.widget.Spinner
 import android.widget.TextView
+import com.google.gson.Gson
 import java.util.*
 
 class PersonalDataActivity : AppCompatActivity() {
+    private val TAG = "Data"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_personal_data)
@@ -59,8 +63,12 @@ class PersonalDataActivity : AppCompatActivity() {
                     birthDate = birthDate.text.toString(),
                     schooling = schooling,
                 )
-                println(personal)
+
+                Log.d(this.TAG, personal.toString())
+
+                val gson = Gson()
                 val intent = Intent(this, ContactDataActivity::class.java)
+                intent.putExtra("personal", gson.toJson(personal))
                 startActivity(intent)
             }
         }
