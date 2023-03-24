@@ -1,6 +1,7 @@
 package co.edu.udea.compumovil.gr01_20231.lab1
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
@@ -18,7 +19,7 @@ class ContactDataActivity : AppCompatActivity() {
 
         val gson = Gson()
         val extras = intent.extras
-        val contact: Contact
+        var contact = Contact()
         if (extras != null) {
              contact = gson.fromJson(
                 extras.getString("personal"), Contact::class.java,
@@ -57,7 +58,13 @@ class ContactDataActivity : AppCompatActivity() {
             }
 
             if (!error) {
-                this.getCountries("co")
+                // this.getCountries("co")
+                contact.phone = phone.toInt()
+                contact.email = email
+                contact.country = country
+                contact.city = cityInput.text.toString()
+                contact.address = addressInput.text.toString()
+                Log.d(this.TAG, contact.toString())
             }
         }
     }
