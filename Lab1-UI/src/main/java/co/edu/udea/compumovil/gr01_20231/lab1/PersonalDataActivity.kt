@@ -56,11 +56,16 @@ class PersonalDataActivity : AppCompatActivity() {
                     schooling = ""
                 }
 
+                var birthDate = birthDate.text.toString()
+                if (birthDate == getString(R.string.person_birth_date)) {
+                    birthDate = ""
+                }
+
                 val personal = Personal(
                     name = name,
                     lastName = lastName,
                     gender = personalGender,
-                    birthDate = birthDate.text.toString(),
+                    birthDate = birthDate,
                     schooling = schooling,
                 )
 
